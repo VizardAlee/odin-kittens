@@ -1,0 +1,20 @@
+<h1><%= @kitten.name %></h1>
+
+<strong>Age: </strong> <%= @kitten.age %></li><br>
+<strong>Cuteness: </strong><%= @kitten.cuteness %></li><br>
+<strong>Softness: </strong><%= @kitten.softness %></li><br>
+<br>
+<%= link_to "Edit", edit_kitten_path %>
+<br><br>
+
+<% if @previous_kitten %>
+  <%= link_to "Previous Kitten", kitten_path(@previous_kitten) %>
+<% end %>
+
+<% if @next_kitten %>
+  <%= link_to "Next Kitten", kitten_path(@next_kitten) %>
+<% end %>
+<br><br>
+
+<%= button_to "Delete Kitten :(", @kitten, method: :delete, data: {confirm: "Are you sure about this?" } %>
+<%= link_to "Home", root_path %>
